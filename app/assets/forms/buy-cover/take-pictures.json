@@ -1,0 +1,75 @@
+{
+    "greeting": {
+        "type": "message",
+        "content": "We need you to take pictures of your baby... by that we mean your vehicle! 🤣",
+        "next": "onlyValid"
+    },
+    "onlyValid": {
+        "type": "message",
+        "content": "Please make sure the vehicle is clear in the pictures & the pictures taken as per the examples.",
+        "next": "clearPictures"
+    },
+    "clearPictures": {
+        "type": "message",
+        "content": "If it’s night time go to a garage to take the pictures in good light.",
+        "next": "frontPic"
+    },
+    "start": "greeting",
+    "frontPic": {
+        "type": "question",
+        "image": "front",
+        "content": "Take a picture of the front.",
+        "fieldType": "camera",
+        "next": "side1Pic"
+    },
+    "side1Pic": {
+        "type": "question",
+        "image": "right",
+        "content": "Now we need the drivers side picture.",
+        "fieldType": "camera",
+        "next": "backPic"
+    },
+    "backPic": {
+        "type": "question",
+        "image": "back",
+        "content": "The backside please 😉.",
+        "fieldType": "camera",
+        "next": "side2Pic"
+    },
+    "side2Pic": {
+        "type": "question",
+        "image": "left",
+        "content": "Now for the other side.",
+        "fieldType": "camera",
+        "next": "odometer"
+    },
+    "odometer": {
+        "type": "question",
+        "image": "odometer",
+        "content": "Please take a picture of the current kilo’s on your cars dash.",
+        "fieldType": "camera",
+        "next": "dashboard"
+    },
+    "dashboard": {
+        "type": "question",
+        "image": "dashboard",
+        "content": "Now we need a picture of your dash from inside the car.",
+        "fieldType": "camera",
+        "next": "almostDone"
+    },
+    "almostDone": {
+        "type": "options",
+        "content": "Okay done. You are ready to go. Click SUMBIT to complete your inspection.",
+        "options": [{
+            "text": "Submit",
+            "next": "submit"
+        }]
+    },
+    "submit": {
+        "type": "action"
+    },
+    "comeBackLater": {
+        "type": "message",
+        "content": "You can take pictures later, however your cover will not be active until you do a self car inspection"
+    }
+}

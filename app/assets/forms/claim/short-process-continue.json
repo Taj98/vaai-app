@@ -1,0 +1,95 @@
+{
+    "start": "greeting",
+    "greeting": {
+        "type": "message",
+        "content": "It seems that you have an incomplete claim. Let us help you submit your claim fast.",
+        "next": "contactName"
+    },
+    "contactName": {
+        "type": "question",
+        "fieldType": "text",
+        "content": "Who is person we must contact concerning this claim?",
+        "next": "contactNumber"
+    },
+    "contactNumber": {
+        "type": "question",
+        "fieldType": "phone",
+        "content": "Please give us the phone number of the contact person?",
+        "next": "paymentValue"
+    },
+    "paymentValue": {
+        "type": "action"
+    },
+    "proceed1": {
+        "type": "options",
+        "content": "Are you happy to proceed?",
+        "options": [{
+            "text": "Yes",
+            "next": "comment1"
+        }, 
+        {
+            "text": "No",
+            "next": "comeBackLater"
+        }]
+    },
+    "comeBackLater": {
+        "type": "message",
+        "content": "You can submit your claim later"
+    },
+    "comment1": {
+        "type": "message",
+        "content": "We need some accident report information.",
+        "next": "policeStationName"
+    },
+    "policeStationName": {
+        "type": "question",
+        "fieldType": "text",
+        "content": "Please provide the name of the police station you reported the accident at.",
+        "next": "policeStationNumber"
+    },
+    "policeStationNumber": {
+        "type": "question",
+        "fieldType": "phone",
+        "content": "Please provide a telephone number for the police station.",
+        "next": "officer"
+    },
+    "officer": {
+        "type": "question",
+        "fieldType": "text",
+        "content": "What is the name of the officer who helped you?",
+        "next": "accidentReport"
+    },
+    "accidentReport": {
+        "type": "question",
+        "fieldType": "text",
+        "content": "Please provide the accident report number, supplied by the police station.",
+        "next": "accidentLocation"
+    },
+    "accidentLocation": {
+        "type": "question",
+        "fieldType": "location",
+        "content": "Where did the accident occur?",
+        "next": "accidentTime"
+    },
+    "accidentTime": {
+        "type": "question",
+        "fieldType": "time",
+        "content": "What time of day did the accident occur?",
+        "next": "submit"
+    },
+    "submit": {
+        "type": "options",
+        "content": "Press SUBMIT to send us the claim information.",
+        "options": [{
+            "text": "Submit",
+            "next": "claim"
+        }, 
+        {
+            "text": "No",
+            "next": "comeBackLater"
+        }]
+    },
+    "claim": {
+        "type": "action"
+    }
+}

@@ -1,0 +1,211 @@
+{
+    "start": "greeting",
+    "greeting": {
+        "type": "message",
+        "content": "Looks like you need some help on the road to get you going again.",
+        "next": "checkCurrent"
+    },
+    "checkCurrent": {
+        "type": "action"
+    },
+    "problem": {
+        "type": "options",
+        "content": "What’s the problem?",
+        "options": [{
+            "text": "Run out of fuel",
+            "value": "fuel",
+            "next": "fuel"
+        }, 
+        {
+            "text": "Vehicle is overheating",
+            "value": "overheating",
+            "next": "overheating"
+        },
+        {
+            "text": "Flat Battery",
+            "value": "flat-battery",
+            "next": "location"
+        },
+        {
+            "text": "Flat tire",
+            "value": "flatTire",
+            "next": "patchOrSpare"
+        },
+        {
+            "text": "Need a tow",
+            "value": "tow",
+            "next": "startLocation"
+        }]
+    },
+    "fuel": {
+        "type": "options",
+        "content": "Select your fuel type",
+        "options": [{
+            "text": "Petrol",
+            "value": "petrol",
+            "next": "fuelDisclaimer"
+        }, {
+            "text": "Diesel",
+            "value": "diesel",
+            "next": "fuelDisclaimer"
+        }]
+    },
+    "fuelDisclaimer": {
+        "type": "message",
+        "content": "You will receive 10 litres of fuel from the service provider",
+        "next": "location"
+    },
+    "overheating": {
+        "type": "message",
+        "content": "The provider will bring 10 litres of water",
+        "next": "location"
+    },
+    "patchOrSpare": {
+        "type": "options",
+        "content": "Do you need your spare wheel fitted or tire patched?",
+        "options": [{
+            "text": "Spare Tire",
+            "value": "spareTire",
+            "next": "location"
+        },
+        {
+            "text": "Patch",
+            "value": "patch",
+            "next": "location"
+        }]
+    },
+    "make": {
+        "type": "question",
+        "content": "What brand is your vehicle?",
+        "fieldType": "dropdown",
+        "source": "makes",
+        "next": "model"
+    },
+    "model": {
+        "type": "question",
+        "content": "What model is it?",
+        "fieldType": "dropdown",
+        "source": "models",
+        "next": "variant"
+    },
+    "variant": {
+        "type": "question",
+        "content": "What is the engine size?",
+        "fieldType": "dropdown",
+        "source": "variants",
+        "next": "year"
+    },
+    "year": {
+        "type": "question",
+        "content": "What year was the vehicle manufactured?",
+        "fieldType": "dropdown",
+        "source": "years",
+        "next": "location"
+    },
+    "location": {
+        "type": "question",
+        "content": "Where do you need help?",
+        "fieldType": "fab",
+        "next": "calculateCost",
+        "icon": "pin"
+    },
+    "startLocation": {
+        "type": "question",
+        "content": "Where do you need help?",
+        "fieldType": "fab",
+        "next": "endLocation",
+        "icon": "pin"
+    },
+    "endLocation": {
+        "type": "question",
+        "content": "Where should we tow your car to?",
+        "fieldType": "fab",
+        "next": "calculateCost",
+        "icon": "pin"
+    },
+    "forWho": {
+        "type": "options",
+        "content": "Who needs help?",
+        "options": [{
+            "text": "Myself",
+            "next": "scan"
+        }, 
+        {
+            "text": "Someone Else",
+            "next": "contactName"
+        }]
+    },
+    "scan": {
+        "type": "question",
+        "content": "Please scan the license disk of the vehicle.",
+        "fieldType": "licenseDisk",
+        "next": "problem"
+    },
+    "contactName": {
+        "type": "question",
+        "fieldType": "text",
+        "content": "What is the person's name?",
+        "next": "contactPhone"
+    },
+    "contactPhone": {
+        "type": "question",
+        "fieldType": "phone",
+        "content": "What is the person's cellphone number?",
+        "next": "licensePlate"
+    },
+    "licensePlate": {
+        "type": "question",
+        "fieldType": "text",
+        "content": "Please input the vehicle's license plate number",
+        "next": "problem"
+    },
+    "calculateCost": {
+        "type": "action"
+    },
+    "proceed1": {
+        "type": "options",
+        "content": "Are you happy to proceed?",
+        "options": [{
+            "text": "Yes",
+            "next": "done"
+        }, 
+        {
+            "text": "No",
+            "next": "cancel"
+        }]
+    },
+    "comeBackLater": {
+        "type": "message",
+        "content": "Maybe we can help you out some other time. Shap!"
+    },
+    "done": {
+        "type": "message",
+        "content": "Great we are almost done.",
+        "next": "confirm"
+    },
+    "confirm": {
+        "type": "options",
+        "content": "Are you happy to pay & get help sent to you quick?",
+        "options": [{
+            "text": "Yes",
+            "next": "payment_method"
+        }]
+    },
+    "payment_method": {
+        "type": "options",
+        "content": "How would you like to make your payment?",
+        "options": [{
+            "text": "Bank Card",
+            "next": "payment"
+        }]
+    },
+    "payment": {
+        "type": "action"
+    },
+    "sendRequest": {
+        "type": "action"
+    },
+    "cancel": {
+        "type": "action"
+    }
+}

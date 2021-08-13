@@ -1,0 +1,217 @@
+{
+    "start": "greeting",
+    "greeting": {
+        "type": "message",
+        "content": "It seems that you might have had an accident. Let us help you submit your claim fast.",
+        "next": "selectPolicy"
+    },
+    "selectPolicy": {
+        "type": "action"
+    },
+    "fullprocess": {
+        "type": "options",
+        "content": "Are you able to complete the full claims process now?",
+        "options": [{
+            "text": "Yes",
+            "next": "pickup"
+        }, 
+        {
+            "text": "No",
+            "next": "reportAccident"
+        }]
+    },
+    "reportAccident": {
+        "type": "message",
+        "content": "Make sure you report the accident at the nearest police station within the next day.",
+        "next": "pickup2"
+    },
+    "pickup": {
+        "type": "question",
+        "fieldType": "location",
+        "content": "Where is the vehicle at the moment?",
+        "next": "contactName"
+    },
+    "pickup2": {
+        "type": "question",
+        "fieldType": "location",
+        "content": "Where is the vehicle at the moment?",
+        "next": "frontPic2"
+    },
+    "contactName": {
+        "type": "question",
+        "fieldType": "text",
+        "content": "Who is the contact person?",
+        "next": "contactNumber"
+    },
+    "contactNumber": {
+        "type": "question",
+        "fieldType": "phone",
+        "content": "Please give us the phone number of the contact person?",
+        "next": "paymentValue"
+    },
+    "paymentValue": {
+        "type": "action"
+    },
+    "proceed1": {
+        "type": "options",
+        "content": "Are you happy to proceed?",
+        "options": [{
+            "text": "Yes",
+            "next": "takePicture"
+        }, 
+        {
+            "text": "No",
+            "next": "comeBackLater"
+        }]
+    },
+    "comeBackLater": {
+        "type": "message",
+        "content": "You can submit your claim later"
+    },
+    "takePicture": {
+        "type": "options",
+        "content": "Can you take pictures of your car now?",
+        "options": [{
+            "text": "Yes",
+            "next": "frontPic"
+        }, 
+        {
+            "text": "No",
+            "next": "comment1"
+        }]
+    },
+    "frontPic2": {
+        "type": "question",
+        "image": "front",
+        "content": "Take a picture of the front of the car.",
+        "fieldType": "camera",
+        "next": "side1Pic2"
+    },
+    "side1Pic2": {
+        "type": "question",
+        "image": "right",
+        "content": "Take a picture of the side of the car.",
+        "fieldType": "camera",
+        "next": "backPic2"
+    },
+    "backPic2": {
+        "type": "question",
+        "image": "back",
+        "content": "Take a picture of the back of the car.",
+        "fieldType": "camera",
+        "next": "side2Pic2"
+    },
+    "side2Pic2": {
+        "type": "question",
+        "image": "left",
+        "content": "Take a picture of the other side of the car.",
+        "fieldType": "camera",
+        "next": "odometer"
+    },
+    "odometer": {
+        "type": "question",
+        "image": "odometer",
+        "content": "Take a picture of the odometer.",
+        "fieldType": "camera",
+        "next": "tow"
+    },
+    "frontPic": {
+        "type": "question",
+        "image": "front",
+        "content": "Take a picture of the front of the car.",
+        "fieldType": "camera",
+        "next": "side1Pic"
+    },
+    "side1Pic": {
+        "type": "question",
+        "image": "right",
+        "content": "Take a picture of the side of the car.",
+        "fieldType": "camera",
+        "next": "backPic"
+    },
+    "backPic": {
+        "type": "question",
+        "image": "back",
+        "content": "Take a picture of the back of the car.",
+        "fieldType": "camera",
+        "next": "side2Pic"
+    },
+    "side2Pic": {
+        "type": "question",
+        "image": "left",
+        "content": "Take a picture of the other side of the car.",
+        "fieldType": "camera",
+        "next": "odometer2"
+    },
+    "odometer2": {
+        "type": "question",
+        "image": "odometer",
+        "content": "Take a picture of the odometer.",
+        "fieldType": "camera",
+        "next": "comment1"
+    },
+    "comment1": {
+        "type": "message",
+        "content": "We need some accident report information.",
+        "next": "policeStationName"
+    },
+    "policeStationName": {
+        "type": "question",
+        "fieldType": "text",
+        "content": "Please provide the name of the police station you reported the accident at.",
+        "next": "policeStationNumber"
+    },
+    "policeStationNumber": {
+        "type": "question",
+        "fieldType": "phone",
+        "content": "Please provide a telephone number for the police station.",
+        "next": "officer"
+    },
+    "officer": {
+        "type": "question",
+        "fieldType": "text",
+        "content": "What is the name of the officer who helped you?",
+        "next": "accidentReport"
+    },
+    "accidentReport": {
+        "type": "question",
+        "fieldType": "text",
+        "content": "Please provide the accident report number, supplied by the police station.",
+        "next": "accidentLocation"
+    },
+    "accidentLocation": {
+        "type": "question",
+        "fieldType": "location",
+        "content": "Where did the accident occur?",
+        "next": "accidentTime"
+    },
+    "accidentTime": {
+        "type": "question",
+        "fieldType": "time",
+        "content": "What time of day did the accident occur?",
+        "next": "tow"
+    },
+    "tow": {
+        "type": "options",
+        "content": "Will you require a tow truck?",
+        "options": [{
+            "text": "Yes",
+            "next": "submit"
+        }, 
+        {
+            "text": "No",
+            "next": "submit"
+        }]
+    },
+    "submit": {
+        "type": "options",
+        "content": "Press SUBMIT to send us the claim information.",
+        "options": [{
+            "text": "Submit",
+            "next": "claim"
+        }]
+    },
+    "claim": {
+        "type": "action"
+    }
+}
